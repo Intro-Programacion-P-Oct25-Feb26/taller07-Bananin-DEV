@@ -19,29 +19,29 @@ public class Problema04 {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
          entrada.useLocale(Locale.US);
-        int numero = 1;
-        int impares = 3;
-        int contador = 1;
-        int contadorsigno = 1;
-        int limite = 7;
-        String signo = "";
-        String mensajeF = "";
+       int denominador = 1;
+        int signo = 1;
+        double incremento = 0;
+        int limite = 15;
+        String mensaje = "";
 
-        while (contador <= limite) {
-            if (contadorsigno %2 == 0){
-                signo = "-";
-            }else{
-                signo = "+";
+        while (denominador <= limite) {
+            double termino = signo * (1.0 / denominador);
+            incremento = incremento + termino;
+
+            if (signo == 1 && denominador == 1) {
+                mensaje = String.format("%s1", mensaje);
+            } else if (signo == 1) {
+                mensaje = String.format("%s + 1/%d", mensaje, denominador);
+            } else {
+                mensaje = String.format("%s - 1/%d", mensaje, denominador);
             }
-           
-            mensajeF = String.format("%s%s%d/%d", mensajeF, signo, numero, impares);
 
-            contador = contador + 1;
-            contadorsigno = contadorsigno + 1;
-            impares = impares + 2;
+            signo = signo * -1;
+            denominador = denominador + 2;
         }
 
-        System.out.printf("%d %s", numero, mensajeF);
+        System.out.printf("%s\n", mensaje);
+        System.out.printf("Resultado = %.6f\n", incremento);
     }
-    
 }
