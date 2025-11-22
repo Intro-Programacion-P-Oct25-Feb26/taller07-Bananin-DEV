@@ -73,3 +73,4 @@ Para imprimir el reporte (usar una cadena de acumulación):
 
 ```
 Para imprimir el reporte (usar una cadena de acumulación):
+Mateo Valdivieso y Mateo Jimenez
